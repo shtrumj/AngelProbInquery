@@ -1,0 +1,41 @@
+{%  extends 'base.html' %}
+
+{%  block title %}HomePage{% endblock %}
+{% block content %}
+<div class="container">
+<div class="wrap">
+<div class="header">
+    <h1>תחקור תקלות</h1>
+</div>
+<form method="POST" action="{{ url_for('success') }}">
+
+<fieldset class="form-field">
+              {{ form.FaultSystem.label }}
+              {{ form.FaultSystem(size=20) }}
+</fieldset>
+    <fieldset class="form-field">
+              {{ form.AffectedSystem.label }}
+            {{ form.AffectedSystem(size=20) }}
+    </fieldset>
+        <fieldset class="form-field">
+              {{ form.AffectDuration.label }}
+              {{ form.AffectDuration(size=20) }}
+</fieldset>
+</br>
+    <fieldset class="form-field" id="solution">
+              {{ form.Solution.label }}
+              {{ form.Solution(rows='5',cols='100') }}
+</fieldset>
+
+          {{ form.submit }}
+
+
+    <div class="color1"></div>
+    <div class="color2"></div>
+    <div class="color3"></div>
+    <div class="color4"></div>
+</form>
+</div>
+</div>
+
+{%  endblock %}
